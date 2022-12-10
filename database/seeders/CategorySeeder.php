@@ -1,0 +1,27 @@
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
+
+class CategorySeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        DB::table('categories')->insert([
+            'title' => Str::random(10),
+            'slug' => Str::random(10),
+            'keywords' => 'test keywords, test keywords, test keywords',
+            'description' => 'test desc, test desc, test desc',
+            'status' => rand(0, 1)
+        ]);
+    }
+}
