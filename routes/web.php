@@ -13,6 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::namespace('\App\Http\Controllers')->group(function () {
+
+    Route::controller(PostController::class)->group(function () {
+        Route::get('/', 'index')->name('post');
+        Route::get('/create-post', 'create')->name('post.create');
+        Route::post('/', 'store')->name('post.store');
+    });
 });
