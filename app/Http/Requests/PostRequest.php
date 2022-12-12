@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Http\Resources\CategoryResource;
 use Illuminate\Foundation\Http\FormRequest;
 
 class PostRequest extends FormRequest
@@ -26,7 +27,8 @@ class PostRequest extends FormRequest
         $rules = [
             'title' => 'required|unique:posts|max:255',
             'description' => 'nullable',
-            'image' => 'nullable|image|mimes:png,jpg,jpeg,webp,gif|max:1024'
+            'image' => 'nullable|image|mimes:png,jpg,jpeg,webp,gif|max:1024',
+            'categories[]' => 'required'
         ];
 
         return $rules;

@@ -6,7 +6,10 @@
             @csrf
             <div class="form-group mb-3">
                 <label>@lang('Post Title')</label>
-                <input type="text" name="title" class="form-control" placeholder="@lang('Post Title')">
+                <input type="text" name="title" class="form-control" placeholder="@lang('Post Title')" required>
+                @error('title')
+                    <span class="text-danger">{{ $message }}</span>
+                @enderror
             </div>
 
             <div class="form-group mb-3">
@@ -16,15 +19,24 @@
                         <option value="{{ $category->id }}">{{ $category->title }}</option>
                     @endforeach
                 </select>
+                @error('categories[]')
+                    <span class="text-danger">{{ $message }}</span>
+                @enderror
             </div>
             <div class="form-group mb-3">
                 <label>@lang('Post Description')</label>
                 <textarea class="form-control" name="description" rows="3"></textarea>
+                @error('description')
+                    <span class="text-danger">{{ $message }}</span>
+                @enderror
             </div>
 
             <div class="form-group mb-3">
                 <label>@lang('Select Image')</label>
                 <input type="file" name="image" class="form-control-file d-block">
+                @error('image')
+                    <span class="text-danger">{{ $message }}</span>
+                @enderror
             </div>
 
             <div class="d-flex gap-3">

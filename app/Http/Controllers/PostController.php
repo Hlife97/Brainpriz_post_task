@@ -35,12 +35,7 @@ class PostController extends Controller
         $post->save();
 
         // Save categoryId and PostId in pivot table
-        foreach ($request->categories as $value) {
-            $data = new PostCategory();
-            $data->category_id = $value;
-            $data->post_id = $post->id;
-            $data->save();
-        }
+        $post->categories()->attach($request->categories);
 
         return redirect()->route('post')->with('status', [
             0 => 'success',

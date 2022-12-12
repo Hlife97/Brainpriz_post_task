@@ -6,13 +6,17 @@ Hi, This project has been created with Laravel 9x framework.
 
     git clone https://github.com/Hlife97/ABYSS-TASK-API-.git
 
+### Composer installation
+
+    composer install
+
 ### Setup MySql database, create mysql database. After that migrate all migrations.
 
     php artisan migrate
 
-### Composer installation
+### You need to create some categories manually, in order to do that you need to run seeder command
 
-    composer install
+    php artisan db:seed --class=CategorySeeder
 
 ### Then run this command for image uploads
 
