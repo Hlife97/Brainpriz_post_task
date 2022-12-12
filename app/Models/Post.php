@@ -10,4 +10,9 @@ class Post extends Model
     use HasFactory;
     protected $table = "posts";
     protected $guarded = ['id'];
+
+    public function categories()
+    {
+        return $this->belongsToMany(Category::class, 'post_category');
+    }
 }

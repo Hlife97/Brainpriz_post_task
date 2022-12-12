@@ -14,6 +14,7 @@
                     <th scope="col">Image</th>
                     <th scope="col">Title</th>
                     <th scope="col">Description</th>
+                    <th scope="col">Categories</th>
                 </tr>
             </thead>
             <tbody>
@@ -26,6 +27,11 @@
                         </td>
                         <td>{{ $post->title }}</td>
                         <td>{{ $post->description }}</td>
+                        <td>
+                            @foreach ($post->categories as $cat)
+                                {{ $cat->title . ',' }}
+                            @endforeach
+                        </td>
                     </tr>
                 @endforeach
             </tbody>
