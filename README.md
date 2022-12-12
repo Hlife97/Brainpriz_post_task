@@ -22,8 +22,16 @@ Hi, This project has been created with Laravel 9x framework.
 
     php artisan storage:link
 
-### And done you can serve this project
+### Done! You can run this project
 
     php artisan serve
+
+## Index Page
+
+![ek1](https://user-images.githubusercontent.com/16389174/207115207-6fa38264-596b-4af8-bcde-3fbfcb9a2155.PNG)
+
+## Create Post Page
+
+![ek2](https://user-images.githubusercontent.com/16389174/207115379-5fcbe6e9-399e-4181-aaa9-010c794d2cf0.PNG)
 
 Have a nice day!
